@@ -10,7 +10,7 @@ const destination = join(temporary, 'candidate');
 const cache = join(temporary, 'npm-cache');
 mkdirSync(cache);
 function run(command, args, cwd) {
-  const environment = { ...process.env, npm_config_cache: cache };
+  const environment = { ...process.env, npm_config_cache: cache, npm_config_update_notifier: 'false', npm_config_offline: 'true' };
   delete environment.SHARED_STATE_DB;
   const result = spawnSync(command, args, { cwd, encoding: 'utf8', windowsHide: true,
     env: environment, timeout: 120000 });
