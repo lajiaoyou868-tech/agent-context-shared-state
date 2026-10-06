@@ -1,0 +1,8 @@
+{
+  "task_id": "TRIP-002",
+  "dedupe_key": "sunny-day-alternative",
+  "title": "晴雨行程：晴天备选页面",
+  "owner": "demo-worker",
+  "checkpoint": "尚未开始",
+  "next_action": "准备虚构晴天方案"
+}

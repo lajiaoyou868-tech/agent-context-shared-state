@@ -1,0 +1,9 @@
+{
+  "task_id": "TRIP-001",
+  "actor": "demo-worker",
+  "expected_revision": 4,
+  "operation_id": "demo-checkpoint-2",
+  "status": "blocked",
+  "checkpoint": "演示检查已记录；场馆开放时间仍未提供",
+  "next_action": "请提供演示所需的场馆信息，不推断真实开放时间"
+}

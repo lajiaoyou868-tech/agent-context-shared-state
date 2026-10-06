@@ -1,0 +1,13 @@
+node_modules/
+project-control/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.log
+.env
+.env.*
+coverage/
+work/
+.DS_Store
+Thumbs.db

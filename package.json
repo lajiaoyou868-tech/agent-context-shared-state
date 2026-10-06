@@ -1,0 +1,18 @@
+{
+  "name": "agent-context-shared-state",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "description": "Local SQLite context continuity with a read-only MCP reference implementation",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22.16.0" },
+  "scripts": {
+    "state": "node src/cli.mjs",
+    "demo": "node examples/sun-rain/demo.mjs",
+    "mcp": "node src/mcp-server.mjs",
+    "test": "node --test",
+    "scan": "node scripts/privacy-scan.mjs",
+    "verify:clone": "node scripts/clone-smoke.mjs",
+    "check": "npm run scan && npm test"
+  }
+}
