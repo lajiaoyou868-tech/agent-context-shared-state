@@ -50,8 +50,8 @@ function fingerprint(root) {
     createHash('sha256').update(readFileSync(join(root, name))).digest('hex')]));
 }
 
-function startServer(t, root, args) {
-  const child = spawn(process.execPath, [serverPath, ...args], {
+function startServer(t, root, args, nodeArgs = []) {
+  const child = spawn(process.execPath, [...nodeArgs, serverPath, ...args], {
     cwd: root, windowsHide: true, shell: false, stdio: ['pipe', 'pipe', 'pipe'],
     env: { ...process.env, SHARED_STATE_DB: 'unselected.db' },
   });
@@ -262,7 +262,9 @@ test('MCP handles malformed JSON, invalid envelopes, oversized fragmented lines 
 test('MCP does not initialize a missing database or create its parent directory', { timeout: 10000 }, async t => {
   const { root } = fixture(t, false);
   const before = readdirSync(root);
-  const session = startServer(t, root, ['--db', 'missing-folder/state.db']);
+  // Node 22 may emit SQLite's ExperimentalWarning before the startup error.
+  // Suppress only that warning type in this child; keep stderr's exact assertion.
+  const session = startServer(t, root, ['--db', 'missing-folder/state.db'], ['--disable-warning=ExperimentalWarning']);
   const exit = await session.stop();
   assert.equal(exit.code, 1);
   assert.deepEqual(exit.lines, []);
