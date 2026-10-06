@@ -48,14 +48,14 @@ The extraction is a small reimplementation of these behaviors. It is not a copy 
 | Instructions | Provide reusable templates rather than exporting instructions from an existing project. |
 | Packaging | Ship source, tests, documentation, templates, and fictional fixtures. Generated state and local validation workspaces stay outside the release payload. |
 
-The earlier implementation did not establish a reusable license grant through an identifiable license file or source headers in the inspected scope. The candidate therefore needs an explicit license decision before public release. A dependency-free implementation does not resolve ownership or licensing questions by itself. See the repository's license guidance for the release decision.
+The earlier implementation did not establish a reusable license grant through an identifiable license file or source headers in the inspected scope. The owner has explicitly selected MIT for this candidate's new implementation. That decision does not relicense the earlier repository. A dependency-free implementation does not by itself resolve ownership questions; future imported code still requires verified rights and attribution. See LICENSE and docs/DEPENDENCIES.md.
 
 ## Directory design
 
 ```text
 src/
   config.mjs          # local configuration and database location
-  store.mjs           # SQLite schema, mutations, and bounded reads
+  store.mjs           # SQLite schema, mutations, and read APIs
   worker.mjs          # local task-bound write interface
   cli.mjs             # initialization and local operator/worker commands
   protocol.mjs        # MCP schemas, validation, and read dispatch
