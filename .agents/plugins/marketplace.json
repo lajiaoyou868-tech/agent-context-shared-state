@@ -1,0 +1,20 @@
+{
+  "name": "shared-state-local-alpha",
+  "interface": {
+    "displayName": "Shared State Local Alpha"
+  },
+  "plugins": [
+    {
+      "name": "agent-context-shared-state",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

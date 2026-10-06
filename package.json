@@ -13,6 +13,7 @@
     "test": "node --test",
     "scan": "node scripts/privacy-scan.mjs",
     "verify:clone": "node scripts/clone-smoke.mjs",
+    "verify:plugin": "node scripts/verify-plugin.mjs",
     "check": "npm run scan && npm test"
   }
 }

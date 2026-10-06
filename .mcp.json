@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "shared-state": {
+      "command": "node",
+      "args": ["src/mcp-server.mjs", "--db", "project-control/state.db"],
+      "cwd": "."
+    }
+  }
+}

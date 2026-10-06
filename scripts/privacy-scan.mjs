@@ -5,7 +5,8 @@ import { spawnSync } from 'node:child_process';
 
 export const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const allowedRoots = new Set(['.github', 'docs', 'examples', 'scripts', 'src', 'templates', 'test']);
-const allowedFiles = new Set(['README.md', 'LICENSE', 'package.json', 'package-lock.json', '.gitignore', '.gitattributes']);
+const allowedFiles = new Set(['README.md', 'LICENSE', 'package.json', 'package-lock.json', '.gitignore', '.gitattributes',
+  '.codex-plugin/plugin.json', '.mcp.json', '.agents/plugins/marketplace.json']);
 const patterns = [
   ['private-key', /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/],
   ['github-token', /(?:gh[pousr]_|github_pat_)[A-Za-z0-9_]{20,}/],

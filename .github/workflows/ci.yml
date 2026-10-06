@@ -23,6 +23,7 @@ jobs:
       - name: Clean install (no third-party dependencies)
         run: npm ci --ignore-scripts --no-audit --no-fund --offline
       - run: npm test
+      - run: npm run verify:plugin
       - run: npm run demo
       # Invoke the CLI directly: older Windows npm.ps1 drops the `--` separator.
       - run: node src/cli.mjs task --input examples/sun-rain/task.json

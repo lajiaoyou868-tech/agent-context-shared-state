@@ -54,6 +54,11 @@ npm run state -- register --input examples/sun-rain/register.json
 
 ## 连接本地 MCP
 
+ChatGPT Desktop 的 v0.1-alpha 本地盲测，请按 [本地插件安装与撤销](docs/DESKTOP_PLUGIN.md) 操作。
+先运行 `node examples/sun-rain/demo.mjs --db project-control/state.db`（未设置 `SHARED_STATE_DB` 时也可用 `npm run demo`），再从本地 marketplace 安装。
+插件读取安装缓存中的示例库副本，更新源码库后需要重新安装。
+`npm run verify:plugin` 检查包装配置和迁移目录后的 stdio 读取，不等于真实 Desktop 新聊天盲测通过。
+
 在支持本地 stdio 的 MCP 客户端中配置：
 
 ```json

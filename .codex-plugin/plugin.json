@@ -1,0 +1,12 @@
+{
+  "name": "agent-context-shared-state",
+  "version": "0.1.0-alpha",
+  "description": "Local-only, Desktop-only alpha wrapper for the existing read-only Shared State demo MCP.",
+  "license": "MIT",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Agent Context Shared State (Local Alpha)",
+    "shortDescription": "Desktop-only: read the local demo state",
+    "longDescription": "Alpha for local ChatGPT Desktop blind tests. Exposes only read_project_overview, read_task and read_recent_changes over stdio. Reads the installed copy of the demo database; no remote service, authentication or write tools."
+  }
+}
