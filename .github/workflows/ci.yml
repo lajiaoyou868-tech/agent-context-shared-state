@@ -24,7 +24,8 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund --offline
       - run: npm test
       - run: npm run demo
-      - run: npm run state -- task --input examples/sun-rain/task.json
-      - run: npm run state -- update --input examples/sun-rain/update.json
-      - run: npm run state -- changes
+      # Invoke the CLI directly: older Windows npm.ps1 drops the `--` separator.
+      - run: node src/cli.mjs task --input examples/sun-rain/task.json
+      - run: node src/cli.mjs update --input examples/sun-rain/update.json
+      - run: node src/cli.mjs changes
       - run: npm run scan
